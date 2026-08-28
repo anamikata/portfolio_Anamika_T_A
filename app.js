@@ -514,12 +514,13 @@ function Education() {
   const vis = useInView(ref, 0.1);
 
   const education = [
-    {
-      icon: "🎓",
-      institution: "Toc H Institute of Science & Technology",
-      degree: "B.Tech — Computer Science & Engineering",
-      period: "2025 – 2029",
-      featured: true,
+   {
+  icon: "🎓",
+  title: "B.Tech in Computer Science & Engineering",
+  organization: "Toc H Institute of Science & Technology",
+  meta: "2025 – 2029",
+  status: "Ongoing",
+  academic: "S1 : 9.26 SGPA  ·  S2 : 9.48 SGPA",
     },
   ];
 
