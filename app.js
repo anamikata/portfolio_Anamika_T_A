@@ -688,7 +688,7 @@ function Footer() {
           {/* Skills */}
           <div>
             <p className="footer-col-label">Skills</p>
-            {["Python · C · C++","JavaScript · HTML · CSS","Machine Learning","Git · Figma · Jupyter"].map(s => (
+            {["Python · C · C++","JavaScript · HTML · CSS","Machine Learning","Git · Canva · Jupyter"].map(s => (
               <p key={s} className="footer-col-item">{s}</p>
             ))}
           </div>
@@ -696,7 +696,7 @@ function Footer() {
           {/* Education */}
           <div>
             <p className="footer-col-label">Education</p>
-            <p className="footer-col-h">Toc H IST</p>
+            <p className="footer-col-h">Toc H Institute of Science & Technology</p>
             <p className="footer-col-sub">B.Tech CSE · 2025–2029</p>
             <a href="https://github.com/anamikata" target="_blank" rel="noopener noreferrer" className="footer-link-gold">
               View GitHub →
@@ -728,7 +728,7 @@ function Footer() {
 
         {/* Bottom strip */}
         <div className={`footer-bottom${vis ? " visible" : ""}`}>
-          <p className="footer-bottom-copy">Built with React · © Anamika T A 2026</p>
+          <p className="footer-bottom-copy"> © Anamika T A 2026</p>
           <a href="mailto:anamikata07@gmail.com" className="footer-bottom-email">anamikata07@gmail.com</a>
           <a href="https://www.linkedin.com/in/anamikata" target="_blank" rel="noopener noreferrer" className="footer-bottom-li">LinkedIn</a>
         </div>
