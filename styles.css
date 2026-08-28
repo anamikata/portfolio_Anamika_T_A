@@ -1851,3 +1851,27 @@ a { text-decoration: none; }
   .beyond-card:nth-child(5) { aspect-ratio: 16 / 10; }
 }
 
+.academic-performance {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  background: #242424 !important;
+  border: 1px solid #C9A84C !important;
+  border-radius: 10px;
+}
+
+.academic-performance span {
+  display: block;
+  color: #C9A84C !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.academic-performance strong {
+  display: block;
+  color: #F5F0E8 !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
