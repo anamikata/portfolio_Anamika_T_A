@@ -680,6 +680,10 @@ a { text-decoration: none; }
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
+.project-card-topline { display:flex; align-items:center; justify-content:space-between; gap:.75rem; margin-bottom:1rem; }
+.project-context { display:inline-flex; align-items:center; max-width:78%; padding:.32rem .55rem; border:1px solid rgba(201,168,76,.22); border-radius:999px; color:var(--gold); background:rgba(201,168,76,.07); font-size:.68rem; font-weight:800; letter-spacing:.03em; line-height:1.2; text-align:right; }
+.project-card .project-emoji { margin-bottom:0; }
+.project-links { min-height:2.5rem; }
 .project-card {
   background: #fff;
   border: 1px solid var(--border);
@@ -854,6 +858,15 @@ a { text-decoration: none; }
   transition: all 0.7s ease;
 }
 .exp-item.visible { opacity: 1; transform: translateY(0); }
+.exp-item.featured .exp-icon-wrap {
+  border-color: rgba(201, 168, 76, 0.75);
+  box-shadow: 0 0 0 5px rgba(201, 168, 76, 0.06);
+}
+.exp-item.featured .exp-card {
+  border-color: rgba(201, 168, 76, 0.42);
+  box-shadow: 0 14px 42px rgba(201, 168, 76, 0.10);
+}
+.exp-item.featured .exp-role { font-size: 1.12rem; }
 
 .exp-icon-wrap {
   flex-shrink: 0;
@@ -889,6 +902,22 @@ a { text-decoration: none; }
   box-shadow: 0 12px 40px rgba(201, 168, 76, 0.12);
   transform: translateY(-4px);
 }
+.exp-featured-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 999px;
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.08);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+.exp-item.featured .exp-company { color: #e4c76a; }
+
 .exp-card-top {
   display: flex;
   justify-content: space-between;
@@ -1851,27 +1880,70 @@ a { text-decoration: none; }
   .beyond-card:nth-child(5) { aspect-ratio: 16 / 10; }
 }
 
-.academic-performance {
-  margin-top: 1rem;
-  padding: 0.9rem 1rem;
-  background: #242424 !important;
-  border: 1px solid #C9A84C !important;
-  border-radius: 10px;
+/* ── Academic highlights: recruiter-first summary ── */
+.academic-highlights {
+  margin: 0 0 3rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(201,168,76,.22);
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,.34);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: .6s ease;
 }
-
-.academic-performance span {
-  display: block;
-  color: #C9A84C !important;
-  font-size: 0.72rem;
-  font-weight: 700;
+.academic-highlights.visible { opacity: 1; transform: translateY(0); }
+.academic-highlight-label {
+  margin-bottom: .9rem;
+  color: #A88B3D;
+  font-size: .72rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.4rem;
+  letter-spacing: .12em;
+}
+.academic-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: .9rem;
+}
+.academic-highlight-grid > div {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: rgba(250,250,248,.72);
+}
+.academic-highlight-grid span,
+.academic-highlight-grid small {
+  display: block;
+  color: var(--muted);
+}
+.academic-highlight-grid span { font-size: .76rem; font-weight: 700; }
+.academic-highlight-grid strong {
+  display: block;
+  margin: .25rem 0 .1rem;
+  color: var(--dark);
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+.academic-highlight-grid small { font-size: .68rem; line-height: 1.45; }
+.credential-pending { color: rgba(245,240,232,.48); font-size: .76rem; font-weight: 750; }
+.credential-card:has(.credential-pending) { border-style: dashed; opacity: .78; }
+.cert-modal-id,
+.cert-modal-note {
+  margin-top: .55rem;
+  color: rgba(245,240,232,.58);
+  font-size: .78rem;
+  line-height: 1.55;
 }
 
-.academic-performance strong {
-  display: block;
-  color: #F5F0E8 !important;
-  font-size: 0.9rem;
-  font-weight: 600;
+@media (max-width: 760px) {
+  .academic-highlight-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ── Accessibility and interaction polish ── */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
